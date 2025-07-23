@@ -1,0 +1,35 @@
+PODS:
+  - Flutter (1.0.0)
+  - MTBBarcodeScanner (5.0.11)
+  - nfc_manager (0.0.1):
+    - Flutter
+  - qr_code_scanner_plus (0.2.6):
+    - Flutter
+    - MTBBarcodeScanner
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - nfc_manager (from `.symlinks/plugins/nfc_manager/ios`)
+  - qr_code_scanner_plus (from `.symlinks/plugins/qr_code_scanner_plus/ios`)
+
+SPEC REPOS:
+  trunk:
+    - MTBBarcodeScanner
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  nfc_manager:
+    :path: ".symlinks/plugins/nfc_manager/ios"
+  qr_code_scanner_plus:
+    :path: ".symlinks/plugins/qr_code_scanner_plus/ios"
+
+SPEC CHECKSUMS:
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
+  nfc_manager: 9d49960b3c679848c16877766b7fa1f27f180d6b
+  qr_code_scanner_plus: 3bfe4deb7f28996a63a2a580819d49dae80d5ed3
+
+PODFILE CHECKSUM: 4305caec6b40dde0ae97be1573c53de1882a07e5
+
+COCOAPODS: 1.16.2
