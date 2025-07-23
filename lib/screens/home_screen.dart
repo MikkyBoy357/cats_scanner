@@ -77,10 +77,10 @@ class _HomeScreenState extends State<HomeScreen> {
           style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
-            color: Colors.grey,
+            color: Colors.white,
           ),
         ),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Colors.black87,
         actions: [
           PopupMenuButton<String>(
             onSelected: (value) {
@@ -178,8 +178,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   icon: const Icon(Icons.nfc, size: 30),
                   label: const Text('NFC Scan', style: TextStyle(fontSize: 18)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
+                    backgroundColor: Colors.black,
                     foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
                 ),
               ),

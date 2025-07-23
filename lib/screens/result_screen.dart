@@ -4,25 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import '../main.dart';
+import '../models/ticket_data.dart';
 import 'home_screen.dart';
-
-class TicketData {
-  final String ticketId;
-  final String ticketNumber;
-
-  const TicketData({required this.ticketId, required this.ticketNumber});
-
-  factory TicketData.fromJson(Map<String, dynamic> json) {
-    return TicketData(
-      ticketId: json['ticketId'] as String,
-      ticketNumber: json['ticketNumber'] as String,
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {'ticketId': ticketId, 'ticketNumber': ticketNumber};
-  }
-}
 
 class ResultScreen extends StatefulWidget {
   final String scannedData;
