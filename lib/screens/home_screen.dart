@@ -1,3 +1,4 @@
+import 'package:cats_scanner/screens/qr_scanner_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -142,27 +143,30 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 40),
-              // SizedBox(
-              //   width: double.infinity,
-              //   height: 60,
-              //   child: ElevatedButton.icon(
-              //     onPressed: () {
-              //       Navigator.push(
-              //         context,
-              //         MaterialPageRoute(
-              //           builder: (context) => const QRScannerScreen(),
-              //         ),
-              //       );
-              //     },
-              //     icon: const Icon(Icons.qr_code, size: 30),
-              //     label: const Text('QR Scan', style: TextStyle(fontSize: 18)),
-              //     style: ElevatedButton.styleFrom(
-              //       backgroundColor: Colors.blue,
-              //       foregroundColor: Colors.white,
-              //     ),
-              //   ),
-              // ),
-              // const SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                height: 60,
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const QRScannerScreen(),
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.qr_code, size: 30),
+                  label: const Text('QR Scan', style: TextStyle(fontSize: 18)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
                 height: 60,

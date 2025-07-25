@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:nfc_manager/ndef_record.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 import 'package:nfc_manager_ndef/nfc_manager_ndef.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../main.dart';
 import '../models/ticket_data.dart';
@@ -755,11 +756,15 @@ class TicketDetailsModal extends StatelessWidget {
                       try {
                         // Replace with your actual backend endpoint
                         final endpoint = '$baseUrl/api/tickets/action/scan';
+                        final sharedPrefs =
+                            await SharedPreferences.getInstance();
+                        final token = sharedPrefs.getString('authToken');
+
                         final response = await http.post(
                           Uri.parse(endpoint),
                           headers: {
                             'Content-Type': 'application/json',
-                            'Authorization': 'Bearer $apiToken',
+                            'Authorization': 'Bearer $token',
                           },
                           body: jsonEncode({
                             "ticketNumber": ticketResponse.ticketNumber,

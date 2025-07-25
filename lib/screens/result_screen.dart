@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../main.dart';
 import '../models/ticket_data.dart';
@@ -54,12 +55,14 @@ class _ResultScreenState extends State<ResultScreen> {
     try {
       // Replace with your actual backend endpoint
       final endpoint = '$baseUrl/api/tickets/action/scan';
+      final sharedPrefs = await SharedPreferences.getInstance();
+      final token = sharedPrefs.getString('authToken');
 
       final response = await http.post(
         Uri.parse(endpoint),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer $apiToken',
+          'Authorization': 'Bearer $token',
         },
         body: jsonEncode({
           "ticketNumber": ticketData?.ticketNumber,
